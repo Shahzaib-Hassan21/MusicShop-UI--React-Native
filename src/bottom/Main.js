@@ -40,6 +40,8 @@ const HomeScreen = () => {
   const renderNewestItem = ({item}) => (
     <TouchableOpacity 
     onPress={()=>{
+      // console.log('SelectedItem:', item)
+      setSelectedImage(item.id)
       navigation.navigate('DetailScreen', { selectedItem: item})
     }}
     style={styles.newestItem}>
@@ -80,16 +82,14 @@ const HomeScreen = () => {
         <View style={styles.listtextView}>
           <Text style={styles.listText}>Newest</Text>
         </View>
-        
         <FlatList
           data={SecondList}
           renderItem={renderNewestItem}
-          keyExtractor={item => item.id}
+          keyExtractor={item => item.id.toString()}
           numColumns={2}
           showsVerticalScrollIndicator={false}
           contentContainerStyle={styles.newestFlatListContainer}
-          />
-          
+          /> 
       </View>
     </>
   );

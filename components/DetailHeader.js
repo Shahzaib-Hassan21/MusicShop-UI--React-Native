@@ -33,7 +33,7 @@ export default DetailHeader;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0.08,
+    flex: 0.16,
     justifyContent: 'space-between',
     flexDirection: 'row',
     marginHorizontal: 18,
